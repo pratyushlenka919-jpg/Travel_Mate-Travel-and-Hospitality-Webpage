@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelMate - Your Personalized Trip Companion</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-plane"></i>
+                TravelMate
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#hotels">Hotels</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <video autoplay muted loop class="bg-video" poster="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&h=1080&fit=crop">
+            <source src="https://cdn.coverr.co/videos/coverr-aerial-view-of-tropical-island-1576/1080p.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="overlay">
+            <h1 class="title">Discover Your Dream Destination</h1>
+            <p class="subtitle">Your Personalized Trip Companion</p>
+
+            <div class="search-box">
+                <div class="search-inputs">
+                    <input type="text" id="destination" placeholder="Where do you want to go?">
+                    <select id="interest">
+                        <option value="">Select Interest</option>
+                        <option value="Adventure">Adventure</option>
+                        <option value="Relaxation">Relaxation</option>
+                        <option value="Culture">Culture</option>
+                        <option value="Food">Food</option>
+                        <option value="Nature">Nature</option>
+                        <option value="City">City Exploration</option>
+                    </select>
+                </div>
+                <button onclick="planTrip()" class="search-btn">
+                    <i class="fas fa-search"></i> Plan My Trip
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Destinations -->
+    <section id="destinations" class="destinations">
+        <div class="container">
+            <h2>Popular Destinations</h2>
+            <p class="section-subtitle">Explore the world's most breathtaking locations</p>
+            
+            <div class="card-container">
+                <div class="card" onclick="showDestinationDetails('Maldives')">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="Maldives">
+                    <div class="card-text">
+                        <h3>Maldives</h3>
+                        <p>Paradise islands with crystal clear waters</p>
+                    </div>
+                </div>
+
+                <div class="card" onclick="showDestinationDetails('India')">
+                    <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=400&h=300&fit=crop" alt="India">
+                    <div class="card-text">
+                        <h3>India</h3>
+                        <p>The city of love and lights</p>
+                    </div>
+                </div>
+
+                <div class="card" onclick="showDestinationDetails('Switzerland')">
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400&h=300&fit=crop" alt="Switzerland">
+                    <div class="card-text">
+                        <h3>Switzerland</h3>
+                        <p>Alpine beauty and pristine landscapes</p>
+                    </div>
+                </div>
+
+                <div class="card" onclick="showDestinationDetails('Japan')">
+                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=300&fit=crop" alt="Japan">
+                    <div class="card-text">
+                        <h3>Japan</h3>
+                        <p>Ancient traditions meet modern innovation</p>
+                    </div>
+                </div>
+
+                <div class="card" onclick="showDestinationDetails('Italy')">
+                    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=400&h=300&fit=crop" alt="Italy">
+                    <div class="card-text">
+                        <h3>Italy</h3>
+                        <p>Art, history, and delicious cuisine</p>
+                    </div>
+                </div>
+
+                <div class="card" onclick="showDestinationDetails('New Zealand')">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="New Zealand">
+                    <div class="card-text">
+                        <h3>New Zealand</h3>
+                        <p>Adventure and natural wonders</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotel Preview Section -->
+    <section id="hotels" class="hotels">
+        <div class="container">
+            <h2>Smart Hotel Preview</h2>
+            <p class="section-subtitle">Immersive room experiences, not boring lists</p>
+            
+            <div class="hotel-preview">
+                <!-- 3D Room Carousel -->
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="slide active">
+                            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop" alt="Luxury Suite">
+                            <div class="room-info">
+                                <h3>Luxury Suite</h3>
+                                <p>Spacious room with ocean view</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop" alt="Cozy Room">
+                            <div class="room-info">
+                                <h3>Cozy Room</h3>
+                                <p>Perfect for relaxation</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop" alt="Party Suite">
+                            <div class="room-info">
+                                <h3>Party Suite</h3>
+                                <p>Great for celebrations</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
+                    <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
+                </div>
+
+                <!-- Vibe Meter -->
+                <div class="vibe-meter">
+                    <h3>Choose Your Vibe</h3>
+                    <div class="vibe-buttons">
+                        <button class="vibe-btn active" data-vibe="luxury" onclick="setVibe('luxury')">
+                            <i class="fas fa-crown"></i> Luxury
+                        </button>
+                        <button class="vibe-btn" data-vibe="chill" onclick="setVibe('chill')">
+                            <i class="fas fa-leaf"></i> Chill
+                        </button>
+                        <button class="vibe-btn" data-vibe="party" onclick="setVibe('party')">
+                            <i class="fas fa-music"></i> Party
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Real User Photos Grid -->
+                <div class="user-photos">
+                    <h3>Real Guest Photos</h3>
+                    <div class="photo-grid">
+                        <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=300&h=300&fit=crop" alt="Guest photo 1">
+                        <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=300&h=300&fit=crop" alt="Guest photo 2">
+                        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=300&h=300&fit=crop" alt="Guest photo 3">
+                        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=300&h=300&fit=crop" alt="Guest photo 4">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=300&fit=crop" alt="Guest photo 5">
+                        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=300&h=300&fit=crop" alt="Guest photo 6">
+                    </div>
+                </div>
+
+                <!-- Quick Compare Toggle -->
+                <div class="compare-section">
+                    <h3>Quick Compare</h3>
+                    <div class="compare-toggle">
+                        <label class="switch">
+                            <input type="checkbox" id="compare-toggle" onchange="toggleCompare()">
+                            <span class="slider"></span>
+                        </label>
+                        <span>Compare Rooms</span>
+                    </div>
+                    <div class="compare-rooms" id="compare-rooms" style="display: none;">
+                        <div class="room-compare">
+                            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&h=300&fit=crop" alt="Room A">
+                            <h4>Room A</h4>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="room-compare">
+                            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop" alt="Room B">
+                            <h4>Room B</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Why Choose TravelMate?</h2>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Personalized Itineraries</h3>
+                    <p>Get custom travel plans based on your interests and preferences.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-clock"></i>
+                    <h3>Save Time</h3>
+                    <p>No more endless research. We do the planning for you.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-star"></i>
+                    <h3>Premium Experience</h3>
+                    <p>Access to luxury accommodations and exclusive experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destination Details Section -->
+    <section id="destination-details" class="destination-details" style="display: none;">
+        <div class="container">
+            <button class="back-btn" onclick="hideDestinationDetails()">&larr; Back to Destinations</button>
+            <div class="destination-content">
+                <div class="destination-header">
+                    <h2 id="destination-title"></h2>
+                    <p id="destination-description"></p>
+                </div>
+                <div class="destination-info">
+                    <div class="info-section">
+                        <h3>About This Destination</h3>
+                        <p id="destination-about"></p>
+                    </div>
+                    <div class="info-section">
+                        <h3>Best Time to Visit</h3>
+                        <p id="destination-best-time"></p>
+                    </div>
+                    <div class="info-section">
+                        <h3>Popular Activities</h3>
+                        <ul id="destination-activities"></ul>
+                    </div>
+                </div>
+                <div class="destination-hotels">
+                    <h3>Recommended Hotels</h3>
+                    <div class="hotel-cards" id="hotel-cards">
+                        <!-- Hotels will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-plane"></i> TravelMate</h3>
+                    <p>Your gateway to unforgettable journeys around the world.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> sckanha092@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 7008105729</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bhubaneswar</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; TravelMate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
