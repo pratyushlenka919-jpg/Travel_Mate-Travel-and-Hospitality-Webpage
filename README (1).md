@@ -23,7 +23,8 @@ A modern, responsive frontend webpage for a travel planning service called Trave
 4. Click "Plan My Trip" to generate a personalized itinerary
 5. Scroll through the page to explore destinations and features
 
-<img "C:\Users\HP\Pictures\Screenshots\Screenshot 2026-10-31 220435.png" />
+<img width="1887" height="871" alt="Screenshot 2026-10-31 220435" src="https://github.com/user-attachments/assets/34c8865d-508c-433f-af62-151346f84f96" />
+
 
 
 ## Files Structure
